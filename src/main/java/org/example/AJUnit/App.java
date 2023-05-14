@@ -72,12 +72,12 @@ public final class App {
      * @return true si el numero es primo, de otra forma, false
      */
     public static boolean isPrimo(int num) {
-        if (num == 2) {
+        if (num == 2) {                       //Un test para el numero 2
             return true;
-        } else if (num <= 1 || num % 2 == 0) {
+        } else if (num <= 1 || num % 2 == 0) { // Un test valores limites: 1,0,-1, 8
             return false;
         }
-        for (int i = 3; i <= Math.sqrt(num); i+=2) {
+        for (int i = 3; i <= Math.sqrt(num); i+=2) {    // Un numero primo, un numero no primo
             if (num % i == 0) {
                 return false;
             }
@@ -95,10 +95,10 @@ public final class App {
         int longitud = clean.length();
         int inicio = 0;
         int fin = longitud - 1;
-        while (fin > inicio) {
+        while (fin > inicio) {                        // Retorna true , no entra bucle
             char inicioChar = clean.charAt(inicio++);
             char finChar = clean.charAt(fin--);
-            if (inicioChar != finChar)
+            if (inicioChar != finChar)                 // Retorna falso, si inicioChar != finChar
                 return false;
         }
         return true;

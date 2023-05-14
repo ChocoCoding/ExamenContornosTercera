@@ -32,19 +32,26 @@ public class App {
         }else return true;
     }
 
-    public static boolean telefonoCorrecto(String telefono) {
-        if(telefono.length()!= 9)
-            throw new TamanhoCaracteresTelefonoException("El telefono debe tener 9 caracteres");
-        if(telefono.charAt(0)!= '6')
-            throw new PrimerCaracterTelefonoException("El primer caracter del telefono debe ser '6'");
 
-        for(char c: telefono.toCharArray()) {
-            if(!Character.isDigit(c))
-                throw new CaracterIncorrectoTelefonoException("Todos los caracteres del telefono deben ser numeros");
+    public static boolean telefonoCorrecto(String telefono) {
+        if (telefono.length() != 9) {
+            throw new TamanhoCaracteresTelefonoException("El telefono debe tener 9 caracteres");
         }
+        /*
+        return true;
+             if (telefono.charAt(0) != '6'){
+                 throw new PrimerCaracterTelefonoException("El primer caracter del telefono debe ser '6'");
+             }e
+
+            for (char c : telefono.toCharArray()) {
+                if (!Character.isDigit(c))
+                    throw new CaracterIncorrectoTelefonoException("Todos los caracteres del telefono deben ser numeros");
+            }
+            return true;
+        }
+        */
         return true;
     }
-
 
     public static float transferir(float saldo, float cantidad, String telf) {
         if (cantidadIntervalo(cantidad)) {

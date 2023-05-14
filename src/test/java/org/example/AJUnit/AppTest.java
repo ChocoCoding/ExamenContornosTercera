@@ -77,24 +77,42 @@ class AppTest {
 
     @Test
     void isPrimoTest() {
-        int numPrimo = 7;
-        int numNoPrimo = 6;
-
-        Assertions.assertTrue(App.isPrimo(numPrimo));
-        Assertions.assertFalse(App.isPrimo(numNoPrimo));
-
-
+        Assertions.assertTrue(App.isPrimo(2));
+        Assertions.assertFalse(App.isPrimo(-1));
+        Assertions.assertFalse(App.isPrimo(0));
+        Assertions.assertFalse(App.isPrimo(1));
+        Assertions.assertFalse(App.isPrimo(8));
+        Assertions.assertTrue(App.isPrimo(17));
+        Assertions.assertFalse(App.isPrimo(22));
     }
 
     @Test
     void isPalindromoTest() {
+        String palindromo = "ana";
+        String noPalindromo = "mipolla";
+
+        Assertions.assertTrue(App.isPalindromo(palindromo));
+        Assertions.assertFalse(App.isPalindromo(noPalindromo));
+
     }
 
     @Test
     void burbujaTest() {
+        int[] V = {6,20,17,8};
+        int[] V2 = {6,8,17,20};
+        App.burbuja(V);
+        Assertions.assertArrayEquals(V2,V);
+
     }
 
     @Test
     void busquedaSecuencialTest() {
+        int[] V = {6,20,17,8};
+        int x = 20;
+        int x2 = 678;
+
+        Assertions.assertEquals(1,App.busquedaSecuencial(V, x));
+        Assertions.assertEquals(-1,App.busquedaSecuencial(V,x2));
+
     }
 }

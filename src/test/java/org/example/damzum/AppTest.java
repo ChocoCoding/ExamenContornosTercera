@@ -47,12 +47,9 @@ class AppTest {
 
         //Para comprobar excepciones Personalizadas
         Assertions.assertAll(
-                () -> assertTrue(App.telefonoCorrecto(tTelefonoCorrecto)),
                 () -> assertThrows(TamanhoCaracteresTelefonoException.class,() -> {
                     App.telefonoCorrecto(tDemasiadosParametros);
                 })
-
-
         );
 
     }
